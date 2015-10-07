@@ -24,12 +24,13 @@ function run(op,part,skippy) {
     console.log("====================================================");
     var code = ev.codifyLine(op);
     var nest = ev.nestedLine(op);
+    process.stderr.write(nest);
     if (part!=null) {
 	part["code"] = code;
 	part["parse"] = nest;
     }
     console.log(cline + ": " + op + "  -->  " + code);
-    process.stderr.write(nest);
+    
     txt += code;
     txt += "\n";
     if (skippy) return 1;
@@ -55,7 +56,7 @@ try {
 
 	var skippy = false;
 	// skip the most time consuming parts of message for now
-	if (true) {
+	if (false) {
 	    if (op.indexOf("distill-circuit")>=0) {
 		process.stderr.write("Skipping distill-circuit\n");
 		skippy = true;
@@ -106,7 +107,7 @@ try {
 } catch (e) {
     process.stderr.write("* evaluate.js failed on " + err_i + ": " + JSON.stringify(err_part) + "\n");
     // continue for now, to compare with old version
-    //throw(e);
+    throw(e);
 }
 
 
