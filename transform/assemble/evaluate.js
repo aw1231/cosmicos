@@ -29,7 +29,7 @@ function run(op,part,skippy) {
 	part["parse"] = nest;
     }
     console.log(cline + ": " + op + "  -->  " + code);
-    process.stderr.write("At " + i + "\n" + cline + ": " + op + " --> " + code + "\n");
+    process.stderr.write(JSON.stringify(cos.Parse.deconsify(v),ev.vocab));
     txt += code;
     txt += "\n";
     if (skippy) return 1;
