@@ -92,7 +92,7 @@ while (<>)
         my $real = 0;        
         if ($term=~/real/){
         $nterm = $1;
-        $real 1;
+        $real =  1;
         }
 	    if ($term=~/(.*)-in-unary$/) {
 		$nterm = $1;
