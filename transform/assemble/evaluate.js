@@ -28,6 +28,7 @@ function run(op,part,skippy) {
 	part["code"] = code;
 	part["parse"] = nest;
     }
+    console.log(process.stdout.log(cline + ": " + op + "  -->  " + code);
     process.stdout.log(cline + ": " + op + "  -->  " + code);
     txt += code;
     txt += "\n";
