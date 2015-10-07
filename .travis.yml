@@ -17,5 +17,5 @@ script:
     - cd ..
     - mkdir build
     - cd build 
-    - cmake .. -Wdev --trace
+    - cmake .. -Wdev
     - make
