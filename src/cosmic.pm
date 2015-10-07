@@ -313,6 +313,7 @@ sub ShowUnary {
 };
 
 sub ShowReal {
+  print "real";
   my $ct = shift;
   my $txt = "(real ";
   for (my $i=0.0; $i<$ct; $i++)
