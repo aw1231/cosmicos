@@ -24,7 +24,7 @@ function run(op,part,skippy) {
     console.log("====================================================");
     var code = ev.codifyLine(op);
     var nest = ev.nestedLine(op);
-    process.stderr.write(nest);
+    process.stderr.write(String(nest));
     if (part!=null) {
 	part["code"] = code;
 	part["parse"] = nest;
