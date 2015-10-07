@@ -6,7 +6,7 @@ use cosmic;
 sub ShowRealLesson {
   my $txt = "";
   $txt .= "# MATH introduce reals\n";
-  $txt .= ShowLine(Op("intro","."));
+  $txt .= ShowLine(Op("intro","real"));
   for (my $i=0.0; $i<10.0; $i++)
     {
       my $r = irand(5);
