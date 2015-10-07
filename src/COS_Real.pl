@@ -13,7 +13,7 @@ sub ShowRealLesson {
       my $r2 = irand(5);
       $txt .= ShowLine(TailOp2("=",
 			   ShowReal($r+$r2),
-			   Op2("=",
+			   Op2("+",
 			       ShowReal($r),
 			       ShowReal($r2))));
     }
