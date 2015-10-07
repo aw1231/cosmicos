@@ -17,6 +17,7 @@ sub ShowRealLesson {
 			       ShowReal($r),
 			       ShowReal($r2))));
     }
+  print($txt);    
   return $txt;
 };
 
