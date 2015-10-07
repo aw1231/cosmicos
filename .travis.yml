@@ -17,5 +17,5 @@ script:
     - cd ..
     - mkdir build
     - cd build 
-    - cmake ..
+    - cmake .. --debug-output
     - make
