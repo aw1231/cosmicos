@@ -27,7 +27,6 @@ function run(op,part,skippy) {
     process.stderr.write(String(code));
     process.stderr.write(String(nest));
     if (part!=null) {
-	part["code"] = code;
 	part["parse"] = nest;
     }
     console.log(cline + ": " + op + "  -->  " + code);
