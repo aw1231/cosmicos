@@ -29,6 +29,7 @@ function run(op,part,skippy) {
 	part["parse"] = nest;
     }
     console.log(cline + ": " + op + "  -->  " + code);
+    process.stderr.write("At " + i + "\n" + cline + ": " + op + " --> " + code + "\n");
     txt += code;
     txt += "\n";
     if (skippy) return 1;
