@@ -21,4 +21,4 @@ sub ShowRealLesson {
 };
 
 
-ShowLesson(ShowAdditionLesson());
+ShowLesson(ShowRealLesson());
