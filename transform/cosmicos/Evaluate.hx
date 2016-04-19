@@ -28,7 +28,7 @@ class Evaluate {
             if (Std.is(e0,Int)||Std.is(e0,BigInteger)||Std.is(e0,BitString)) {
                 return e0;
             }
-            //trace("working on " + Parse.deconsify(e0));
+            trace("working on " + Parse.deconsify(e0));
             var cursor = new Cursor(e0);
             var x : Dynamic = evaluateInContext(cursor.next(),c);
             if (x==id_lambda) { // ?

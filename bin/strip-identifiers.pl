@@ -43,6 +43,18 @@ sub GenUnary {
   return $txt;
 };
 
+sub GenReal {
+  my $ct = shift;
+  my $txt = "0";
+  for (my  $i=0; $i<$ct; $i++)
+    {
+      $txt .= "1";
+#      $txt .= "(:)";
+    }
+  $txt .= "0";
+  return $txt;
+};
+
 sub EvalString {
     my $str = shift;
     my $val = Math::BigInt->new(0);
@@ -77,6 +89,11 @@ while (<>)
 	    my $right = $4;
 	    my $unary = 0;
 	    my $nterm = $term;
+        my $real = 0;        
+        if ($term=~/real/){
+        $nterm = $1;
+        $real =  1;
+        }
 	    if ($term=~/(.*)-in-unary$/) {
 		$nterm = $1;
 		$unary = 1;
@@ -90,6 +107,9 @@ while (<>)
 	    if ($unary) {
 		$num = GenUnary($num);
 	    }
+        if ($real) {
+        $num = GenReal($num);
+        }
 	    $term = quotemeta($context);
 	    $body =~ s/$term/$left$num$right/g;
 	  }

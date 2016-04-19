@@ -24,11 +24,14 @@ function run(op,part,skippy) {
     console.log("====================================================");
     var code = ev.codifyLine(op);
     var nest = ev.nestedLine(op);
+    process.stderr.write(String(nest));
+    process.stderr.write(String(op));
     if (part!=null) {
 	part["code"] = code;
 	part["parse"] = nest;
     }
     console.log(cline + ": " + op + "  -->  " + code);
+    
     txt += code;
     txt += "\n";
     if (skippy) return 1;
@@ -54,7 +57,7 @@ try {
 
 	var skippy = false;
 	// skip the most time consuming parts of message for now
-	if (true) {
+	if (false) {
 	    if (op.indexOf("distill-circuit")>=0) {
 		process.stderr.write("Skipping distill-circuit\n");
 		skippy = true;
